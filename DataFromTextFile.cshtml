@@ -1,0 +1,21 @@
+﻿@{
+Layout = "~/Shared/_LayoutPractical.cshtml";
+Page.Title = "Data from Text File";
+
+var dataFile = Server.MapPath("~/App_Data/Persons.txt");
+Array userData = File.ReadAllLines(dataFile);
+}
+@foreach (string dataLine in userData) {
+    foreach (string dataItem in dataLine.Split(',')) {
+        @dataItem <text>&nbsp;</text><br>
+    }
+}
+
+<p>Why are there 6 lines above, but 3 lines below?</p>
+
+@foreach (string dataLine in userData) 
+{
+  foreach (string dataItem in dataLine.Split(',')) 
+  {@dataItem <text>&nbsp;</text>}
+  <br />
+}
