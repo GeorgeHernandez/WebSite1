@@ -1,16 +1,15 @@
-﻿@{
-    
-}<!DOCTYPE html>
-
+﻿@{}<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title></title>
+        <title>@Page.Title</title>
     </head>
     <body>
         @RenderPage("~/Shared/_Header.cshtml")
         <h2>Header from Layout</h2>
+        <h3>Header from Content Page: @Page.Title</h3>
         @RenderBody()
-        <p>Footer from Layout</p>
+        <p>Footer from Layout. @Page.AnyProperty</p>
+        <p><a href="../">UP</a></p>
     </body>
 </html>
