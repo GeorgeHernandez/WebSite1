@@ -6,7 +6,8 @@
 
     // Page specific:
     var db = Database.Open("cnnIrisDeve"); 
-    var sql = "SELECT * FROM com.comUser WHERE FirstName = 'George' ORDER BY LastName";
+    // var sql = "SELECT * FROM com.comUser WHERE FirstName = 'George' ORDER BY LastName";
+    var sql = "EXEC comUser_Get @ID = 1238";
     //data source="C:\Users\ghernandez.ICLOPS\Documents\My Web Sites\WebSite1\App_Data\SmallBakery.sdf"
 }
 
