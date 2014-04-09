@@ -1,24 +1,25 @@
 ﻿@{
-var imagePath=""; 
-if (Request["Choice"] != null)
-   {imagePath="" + Request["Choice"];} 
+    // On most pages:
+    Layout = "~/Shared/_Layout.cshtml";
+    Page.Title = "Display Image";
+    Page.Summary = "This page tests a simple form that displays images.";
+
+    // Page specific:
+    var imagePath = ""; 
+    if (Request["Choice"] != null) {
+       imagePath = "/Images/" + Request["Choice"];
+   }
 } 
-<!DOCTYPE html> 
-<html> 
-<body> 
-<h1>Display Images</h1> 
 <form method="post" action=""> 
-I want to see: 
-<select name="Choice"> 
-  <option value="bkg-blu.jpg">bkg-blu</option> 
-  <option value="iis-8.png">iis-8</option> 
-  <option value="msweb-brand.png">msweb-brand</option> 
-</select> 
-<input type="submit" value="Submit" /> 
-@if (imagePath != "") {
-    <p><img src="@imagePath" alt="Sample" /></p>
-}  
-</form> 
-    <p><a href="../">UP</a></p>
-</body> 
-</html>
+    I want to see: 
+    <select name="Choice"> 
+      <option value="bkg-blu.jpg">bkg-blu</option> 
+      <option value="iis-8.png">iis-8</option> 
+      <option value="msweb-brand.png">msweb-brand</option> 
+    </select> 
+    <input type="submit" value="Submit" />
+
+    @if (imagePath != "") {
+        <p><img src="@imagePath" alt="Sample" /></p>
+    }  
+</form>

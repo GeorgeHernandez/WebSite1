@@ -1,6 +1,10 @@
-﻿<html>
-<body> 
-@{
+﻿@{
+    // On most pages:
+    Layout = "~/Shared/_Layout.cshtml";
+    Page.Title = "Form.cshtml";
+    Page.Summary = "This page tests a simple form that collects info and redisplays it.";
+
+    // Page specific:
     if (IsPost) { 
         string companyname = Request["companyname"]; 
         string contactname = Request["contactname"]; 
@@ -17,6 +21,3 @@
         </form>
     }
 }
-    <p><a href="../">UP</a></p>
-</body> 
-</html>

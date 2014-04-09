@@ -1,35 +1,23 @@
 ﻿@{
-    
-}
-<!DOCTYPE html>
-
+Page.Title = "WebSite1";
+Page.Summary = "This site is for testing ASP.NET WebPages with Razor.";
+}<!DOCTYPE html>
 <html lang="en">
+
 <head>
-     <meta charset="utf-8" />
+    <meta charset="utf-8" />
+    <title>@Page.Title</title>
 </head>
+
 <body>
-     @RenderPage("~/Shared/_Header.cshtml")
-     <p>The time is @DateTime.Now</p>
-    <!-- Single statement block -->
-    @{ var myMessage =	"Hello World"; }
-
-    <!-- Inline expression or variable -->
-    <p>The value of myMessage is: @myMessage</p> 
-
-<!--	Multi-statement block -->
-@{
-var greeting = "Welcome to our site!";
-var weekDay = DateTime.Now.DayOfWeek;
-var greetingMessage = greeting + " Today is: " + weekDay;
-}
-    <p>The greeting is: @greetingMessage</p>
-    
-    <p>Links:</p>
+    <h1>@Page.Title</h1>
+    <p>@Page.Summary</p>
+    <hr>
     <ul>
         <li><a href="Content.cshtml">Content.cshtml</a></li>
         <li><a href="Form.cshtml">Form.cshtml</a></li>
         <li><a href="DisplayImage.cshtml">DisplayImage.cshtml</a></li>
         <li><a href="DataFromTextFile.cshtml">DataFromTextFile.cshtml</a></li>
+        <li><a href="Database.cshtml">Database.cshtml</a></li>
     </ul>
 </body>
-</html>

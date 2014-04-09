@@ -1,7 +1,23 @@
 ﻿@{
-Layout = "~/Shared/_Layout.cshtml";
-Page.Title = "Frogs";
+Layout = "~/Shared/_LayoutTest.cshtml";
+Page.Title = "Content Page";
 Page.AnyProperty = "foo";
 }
-<p>Content page paragraph 1.</p>
+<p>This page if for playing with Layouts. Most pages on this site should use _Layout, _Header, etc., but this page should use _LayoutTest, _HeaderTest, etc.</p>
+
 <p>Content page paragraph 2: Sensitive static properties from _AppStart.cshtml: WebMail.SmtpServer: @WebMail.SmtpServer</p>
+
+<p>The time is @DateTime.Now</p>
+<!-- Single statement block -->
+@{ var myMessage =	"Hello World"; }
+
+<!-- Inline expression or variable -->
+<p>The value of myMessage is: @myMessage</p> 
+
+<!--	Multi-statement block -->
+@{
+var greeting = "Welcome to our site!";
+var weekDay = DateTime.Now.DayOfWeek;
+var greetingMessage = greeting + " Today is: " + weekDay;
+}
+    <p>The greeting is: @greetingMessage</p>

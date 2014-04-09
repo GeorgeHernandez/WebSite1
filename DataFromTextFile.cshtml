@@ -1,9 +1,12 @@
 ﻿@{
-Layout = "~/Shared/_LayoutPractical.cshtml";
-Page.Title = "Data from Text File";
+    // On most pages:
+    Layout = "~/Shared/_Layout.cshtml";
+    Page.Title = "Data from Text File";
+    Page.Summary = "This page pulls data from files.";
 
-var dataFile = Server.MapPath("~/App_Data/Persons.txt");
-Array userData = File.ReadAllLines(dataFile);
+    // Page specific:
+    var dataFile = Server.MapPath("~/App_Data/Persons.txt");
+    Array userData = File.ReadAllLines(dataFile);
 }
 @foreach (string dataLine in userData) {
     foreach (string dataItem in dataLine.Split(',')) {
@@ -11,7 +14,7 @@ Array userData = File.ReadAllLines(dataFile);
     }
 }
 
-<p>Why are there 6 lines above, but 3 lines below?</p>
+<p>Why are there 6 lines above, but 3 lines below?!?</p>
 
 @foreach (string dataLine in userData) 
 {

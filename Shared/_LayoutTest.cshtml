@@ -1,0 +1,15 @@
+﻿@{}<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@Page.Title</title>
+    </head>
+    <body>
+        @RenderPage("~/Shared/_HeaderTest.cshtml")
+        <h2>Header from Layout Page</h2>
+        <h3>Header from Content Page as laid out by Layout Page: @Page.Title</h3>
+        @RenderBody()
+        <p>Footer from Layout. @Page.AnyProperty</p>
+        <p><a href="../">UP</a></p>
+    </body>
+</html>
