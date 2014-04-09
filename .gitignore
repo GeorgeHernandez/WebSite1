@@ -1,0 +1,11 @@
+# Anything Git should ignore
+# https://help.github.com/articles/ignoring-files
+# http://git-scm.com/docs/gitignore
+
+Thumbs.db
+web.config
+
+# Database files
+*.ldf
+*.mdf
+*.sdf
