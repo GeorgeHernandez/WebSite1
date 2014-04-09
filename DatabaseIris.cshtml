@@ -1,0 +1,28 @@
+﻿@{
+    // On most pages:
+    Layout = "~/Shared/_Layout.cshtml";
+    Page.Title = "Database";
+    Page.Summary = "This page is testing interacting with databases.";
+
+    // Page specific:
+    var db = Database.Open("cnnIrisDeve"); 
+    var sql = "SELECT * FROM com.comUser WHERE FirstName = 'George' ORDER BY LastName";
+    //data source="C:\Users\ghernandez.ICLOPS\Documents\My Web Sites\WebSite1\App_Data\SmallBakery.sdf"
+}
+
+<table> 
+    <tr>
+        <th>ID</th> 
+        <th>FirstName</th> 
+        <th>LastName</th> 
+        <th>Log_in</th> 
+    </tr>
+    @foreach(var row in db.Query(sql)) {
+    <tr> 
+        <td>@row.ID</td> 
+        <td>@row.FirstName</td> 
+        <td>@row.LastName</td> 
+        <td align="right">@row.Log_in</td> 
+    </tr> 
+    }
+</table>
