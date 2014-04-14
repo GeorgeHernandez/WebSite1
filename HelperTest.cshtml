@@ -1,0 +1,15 @@
+﻿@{
+    // On most pages:
+    Layout = "~/Shared/_Layout.cshtml";
+    Page.Title = "Helper Test";
+    Page.Summary = "This page is for playing with ASP.NET Helpers.";
+
+    // Page specific:
+}
+<p>Here I use the MakeNote help:</p>
+
+@MyHelpers.MakeNote("My test note content.")
+
+@Crypto.Hash("data")
+
+
