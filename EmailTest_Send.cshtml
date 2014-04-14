@@ -1,0 +1,17 @@
+﻿@{
+    // On most pages:
+    Layout = "~/Shared/_Layout.cshtml";
+    Page.Title = "Email Test Send";
+    Page.Summary = "This page tests sending emails.";
+
+    // Page specific:
+    var customer = Request["customer"];
+    var customerRequest = Request["customerRequest"];
+    var recipient = "george.hernandez+test@iclops.com";
+    try {
+        WebMail.Send(to: recipient, subject: "Help request from " + customer, body: customerRequest ); 
+    } catch (Exception ex) {
+        <text>@ex</text> 
+    }
+}
+<p>Your email has been sent to: <b>@recipient</b>.</p>

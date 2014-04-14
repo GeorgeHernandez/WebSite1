@@ -1,0 +1,15 @@
+﻿@{
+    // On most pages:
+    Layout = "~/Shared/_Layout.cshtml";
+    Page.Title = "Email Test";
+    Page.Summary = "This page is for testing making an email.";
+
+    // Page specific:
+}
+<form method="post" action="EmailTest_Send.cshtml"> 
+    <label>Username:</label>
+    <input type="text name="customer" />
+    <label>Details about the problem:</label> 
+    <textarea name="customerRequest" cols="45" rows="4"></textarea> 
+    <p><input type="submit" value="Submit" /></p> 
+</form> 

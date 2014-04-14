@@ -1,12 +1,17 @@
 ﻿@{
     // _AppStart.cshtml is typically in the site root.
     // _AppStart.cshtml is for code to execute before the site starts.
+    // If you modify _AppStart.cshtml, then you should restart the site in IIS.
     // _AppStart.cshtml is for global values like counters and global names.
-    // Files with an underscore prefix cannot be browsed directly.
-    // _
-    WebMail.SmtpServer = "mailserver.example.com";
+    // Files with an underscore prefix cannot be browsed directly, but may be in the repo.
+
+    // I moved WebMail config to web.config so the values will not be in the repo.
     WebMail.EnableSsl = true;
-    WebMail.UserName = "username@example.com";
-    WebMail.Password = "your-password";
-    WebMail.From = "your-name-here@example.com";
+    WebMail.From = @System.Web.Configuration.WebConfigurationManager.AppSettings["ghWebMailUser"];
+    WebMail.Password = @System.Web.Configuration.WebConfigurationManager.AppSettings["ghWebMailPassword"];
+    WebMail.SmtpPort = 587; //25. 465 SSL. 587 TLS.
+    WebMail.SmtpServer = @System.Web.Configuration.WebConfigurationManager.AppSettings["ghWebMailServer"];
+    WebMail.UserName = @System.Web.Configuration.WebConfigurationManager.AppSettings["ghWebMailUser"];
+    // Use elsewhere via:
+    // WebMail.Send(to, subject, body [, from] [, cc] [, filesToAttach] [, isBodyHtml] [, additionalHeaders])
 }
